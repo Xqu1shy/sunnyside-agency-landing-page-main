@@ -1,0 +1,138 @@
+:root {
+    --soft-red: hsl(7, 99%, 70%);
+    --yellow: hsl(51, 100%, 49%);
+    --graphic-design-text: hsl(167, 40%, 24%);
+    --photography-text: hsl(198, 62%, 26%);
+    --footer: hsl(168, 34%, 41%);
+
+    --light-blue: hsl(197, 86%, 73%);
+
+    --very-dark-desaturated-blue: hsl(212, 27%, 19%);
+    --very-dark-grayish-blue: hsl(213, 9%, 39%);
+    --dark-grayish-blue: hsl(232, 10%, 55%);
+    --grayish-blue: hsl(210, 4%, 67%);
+    --white: hsl(0, 0%, 100%);
+}
+
+
+/* layout */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5em;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.nav-contact-container {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+.nav {
+    display: flex;
+    gap: 2em;
+}
+
+.contact {
+    border: none;
+    border-radius: 50px;
+    padding: 0.5em 1em;
+    cursor: pointer;
+}
+
+.contact:hover {
+    background-color: var(--light-blue);
+
+    color: var(white);
+}
+
+/* ===================================== */
+
+.pic img {
+    width: 100%;
+}
+
+
+/* typo */
+
+.nav a {
+    text-decoration: none;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    color: var(--white);
+    font-size: 1.125rem;
+}
+
+.contact {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    color: var(--photography-text);
+    font-size: 1.125rem;
+}
+
+
+@media (max-width: 600px) {
+
+    .burger {
+        display: block;
+        position: absolute;
+        right: 1.5em;
+    }
+
+    .nav-contact-container {
+        display: none;
+    }
+    
+    header.show-secondary-nav .nav-contact-container {
+        display: inline-flex;
+        background-color: white;
+        position: absolute;
+        width: 87%;
+        flex-direction: column;
+        right: 1.5em;
+        top: 6em;
+        padding: 3em 0;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-contact-container:after {
+        content: "";
+        background-color: transparent;
+        position:absolute;
+        top: -2em;
+        right: 0;
+        
+        border-left: 12px solid transparent;
+        border-right: 10px solid var(--white);
+        border-top: 15px solid transparent;
+        border-bottom: 20px solid var(--white);
+      }
+
+
+
+
+
+/* typo */
+
+    .nav a {
+        color: var(--dark-grayish-blue);
+    }
+
+    .contact {
+        color: var(--very-dark-desaturated-blue);
+
+        background-color: var(--yellow);
+    }
+
+}
